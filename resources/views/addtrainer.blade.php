@@ -50,6 +50,22 @@
         </div>
 
     </div>
+
+    <div class="form-group">
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputStudio">Select Type</label>
+            </div>
+            <select name="type" class="custom-select" id="inputType" required>
+                @foreach ($type as $k => $v)
+                    <option value="{{ $k }}">{{ $v }}</option>
+                @endforeach
+            </select>
+        </div>
+
+    </div>
+
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

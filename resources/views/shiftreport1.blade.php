@@ -68,14 +68,14 @@
             <th>Field3</th>
             <th>Field4</th>
             <th>Field5</th>
-            <th>Field6</th>
             <th>Total Period Sales</th>
         </tr>
     </thead>
     <tbody>
 
     @foreach ($inShift as $shift)
-        <tr onclick="getShiftTimeline('{{$shift->model}}');">
+        {{--<tr onclick="getShiftTimeline('{{$shift->model}}');">--}}
+        <tr onclick="redirect('{{$shift->id}}');">
             <td>{{$shift->studioName}}</td>
             <td>{{ $shift->trainer_shift }}</td>
             <td>{{$shift->model}}</td>
@@ -103,7 +103,6 @@
             <td style="max-width: 20px;overflow: hidden;" data-toggle="tooltip" data-placement="bottom" title="{{$shift->field3}}">{{$shift->field3}}</td>
             <td style="max-width: 20px;overflow: hidden;" data-toggle="tooltip" data-placement="bottom" title="{{$shift->field4}}">{{$shift->field4}}</td>
             <td style="max-width: 20px;overflow: hidden;" data-toggle="tooltip" data-placement="bottom" title="{{$shift->field5}}">{{$shift->field5}}</td>
-            <td style="max-width: 20px;overflow: hidden;" data-toggle="tooltip" data-placement="bottom" title="{{$shift->field6}}">{{$shift->field6}}</td>
             <td>${{$shift->total_period}}</td>
         </tr>
     @endforeach
@@ -190,6 +189,16 @@ $('#datepicker').datepicker( {
             window.location.href = ( '/admin/shiftreport/'+date);
         }
     });
+
+function redirect(id){
+
+    console.log("shift id:" + id);
+    var url = "/admin/shiftdetails/" + id;
+
+    var win = window.open(url, '_blank');
+    win.focus();
+
+}
 
 function getShiftTimeline(modelname){
 

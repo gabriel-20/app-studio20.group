@@ -17,7 +17,7 @@
     <th>Studio</th> 
     <th>Email</th>
     <th>Phone</th>
-    <th>Shift</th>
+    <th>Job Title</th>
     <th>Models</th>
     <th>Date</th>
   </tr>
@@ -31,7 +31,7 @@
     <td onclick="window.location='{{ url("admin/edittrainer/$trainer->id") }}'">{{ $trainer->sName }}</td>
     <td onclick="window.location='{{ url("admin/edittrainer/$trainer->id") }}'">{{ $trainer->email }}</td>
     <td onclick="window.location='{{ url("admin/edittrainer/$trainer->id") }}'">{{ $trainer->phone }}</td>
-    <td onclick="window.location='{{ url("admin/timetable/$trainer->id") }}'">{{ $trainer->shift }}</td>
+    <td onclick="window.location='{{ url("admin/timetable/$trainer->id") }}'">{{ $trainer->type }}</td>
     <td>{{ strlen($trainer->mymodels) > 50 ? substr($trainer->mymodels,0,50)."..." : $trainer->mymodels }}<button class="btn btn-success" style="float:right" onclick="window.location='{{ url("admin/edittrainermodels/$trainer->id") }}'">Edit</button></td>
     <td onclick="window.location='{{ url("admin/edittrainer/$trainer->id") }}'">{{ $trainer->created_at }}</td>
   </tr>

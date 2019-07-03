@@ -33,6 +33,10 @@ Route::any('/admin/timetable/{id}', 'HomeController@timetable')->name('timetable
 
 Route::any('/admin/shiftreport/{date?}', 'HomeController@shiftreport1')->name('shiftreport1');
 
-//Route::any('/admin/shiftreport1/{date?}', 'HomeController@shiftreport1')->name('shiftreport1');
+Route::any('/admin/shiftdetails/{id}', 'HomeController@shiftdetails')->name('shiftdetails');
 
 Route::any('/admin/ajaxAdminData', 'HomeController@ajaxAdminData');
+
+//Route::any('/admin/genpassword', 'HomeController@genpassword');
+
+Route::any('/admin/schedule', 'HomeController@schedule');
